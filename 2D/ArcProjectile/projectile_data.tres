@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ProjectileData" load_steps=2 format=3 uid="uid://b5rs5xi0xi3kk"]
+
+[ext_resource type="Script" path="res://projectile_data.gd" id="1_lymte"]
+
+[resource]
+script = ExtResource("1_lymte")
+move_speed = 0.5
+arc_strength = 500.0
+offset_strength = 0.4
+control_1_scale = Vector2(0, -1)
+control_2_scale = Vector2(0, -1)

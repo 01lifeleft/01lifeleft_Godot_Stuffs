@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://tks3csgre132"]
+
+[ext_resource type="Texture2D" uid="uid://4en873knx43" path="res://icon.svg" id="1_0fmkb"]
+[ext_resource type="Script" path="res://player.gd" id="2_fomu2"]
+[ext_resource type="Script" path="res://enemy.gd" id="3_583fu"]
+[ext_resource type="Resource" uid="uid://b5rs5xi0xi3kk" path="res://projectile_data.tres" id="3_es0jx"]
+[ext_resource type="PackedScene" uid="uid://db03g2cwqgovu" path="res://drag_n_drop.tscn" id="4_cp0s3"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" type="Sprite2D" parent="." node_paths=PackedStringArray("enemy")]
+position = Vector2(213, 319)
+texture = ExtResource("1_0fmkb")
+script = ExtResource("2_fomu2")
+projectile_data = ExtResource("3_es0jx")
+enemy = NodePath("../Enemy")
+shoot_cooldown = 0.1
+
+[node name="DragNDrop" parent="Player" instance=ExtResource("4_cp0s3")]
+
+[node name="Enemy" type="Sprite2D" parent="."]
+position = Vector2(941, 323)
+texture = ExtResource("1_0fmkb")
+script = ExtResource("3_583fu")
+
+[node name="DragNDrop" parent="Enemy" instance=ExtResource("4_cp0s3")]
